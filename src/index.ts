@@ -4,13 +4,9 @@ import New from './modal/modal.html';
 
 class DontModal {
   constructor() {
-    setTimeout(() => {
-      this.takeData();
-    }, 1);
-  }
-
-  takeData() {
-    this.createModal();
+    document.addEventListener('DOMContentLoaded', () => {
+      this.createModal();
+    }, false);
   }
 
   createModal() {
