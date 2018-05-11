@@ -1,4 +1,5 @@
 const path = require('path')
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: path.resolve(__dirname, './src/index.ts'),
@@ -8,11 +9,11 @@ module.exports = {
     libraryTarget: 'umd',
     umdNamedDefine: true
   },
-  resolve: { extensions: [ '.tsx', '.ts', '.js', '.html' ] },
+  resolve: { extensions: [ '.tsx', '.ts', '.js', '.html', '.css' ] },
   devServer: {
     port: 3000
   },
-  plugins: [],
+  plugins: [new ExtractTextPlugin("styles.css")],
   module: {
     rules: [
       {
@@ -31,6 +32,12 @@ module.exports = {
             attrs: [':data-src']
           }
         }
+      },
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          use: ['css-loader']
+        })
       }
     ]
   }
