@@ -8,7 +8,7 @@ module.exports = {
     libraryTarget: 'umd',
     umdNamedDefine: true
   },
-  resolve: { extensions: [ '.tsx', '.ts', '.js' ] },
+  resolve: { extensions: [ '.tsx', '.ts', '.js', '.html' ] },
   devServer: {
     port: 3000
   },
@@ -19,8 +19,17 @@ module.exports = {
         test: /\.tsx?$/,
         exclude: /(node_modules)/,
         use: {
-          loader: 'babel-loader',
-          options: { presets: ['env', 'stage-2'] }
+          loader: 'ts-loader'
+        }
+      },
+      {
+        test: /\.(html)$/,
+        exclude: /(node_modules)/,
+        use: {
+          loader: 'html-loader',
+          options: {
+            attrs: [':data-src']
+          }
         }
       }
     ]
