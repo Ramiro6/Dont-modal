@@ -1,0 +1,32 @@
+{
+  "name": "dont-modal",
+  "version": "0.0.1",
+  "description": "Simple Modal",
+  "main": "index.js",
+  "repository": "https://github.com/Ramiro6/Dont-drop.git",
+  "author": "Ramiro Ruiz <ramiroruiz578@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "keywords": [
+    "webpack"
+  ],
+  "scripts": {
+    "build:dev": "webpack --watch -d",
+    "build:server": "webpack-dev-server --watch -d",
+    "build:prod": "webpack --env prod -p"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "ts-loader": "^4.3.0",
+    "typescript": "^2.8.3",
+    "webpack": "^4.8.1",
+    "webpack-cli": "^2.1.3",
+    "tslint": "^5.10.0",
+    "webpack-dev-server": "^3.1.4"
+  }
+}
