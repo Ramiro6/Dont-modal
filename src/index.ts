@@ -3,11 +3,11 @@ import New from './modal/modal.html';
 
 class DontModal {
   constructor() {
-    console.log('Init constructor')
-    // document.addEventListener('DOMContentLoaded', () => {
-    //   this.createModal();
-    // }, false);
-    this.createModal();
+    console.log('Init constructor');
+    document.addEventListener('DOMContentLoaded', () => {
+      this.createModal();
+    }, false);
+    // this.createModal();
   }
 
   createModal() {
@@ -18,6 +18,6 @@ class DontModal {
   }
 }
 
-// new DontModal();
+new DontModal();
 
 export default DontModal;
