@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "noUnusedLocals": true,
+    "moduleResolution": "node",
     "noUnusedParameters": true,
     "outDir": "./dist/",
     "noImplicitAny": true,
