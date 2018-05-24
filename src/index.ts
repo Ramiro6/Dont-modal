@@ -16,6 +16,6 @@ class DontModal {
   }
 }
 
-new DontModal();
+// new DontModal();
 
 export default DontModal;
