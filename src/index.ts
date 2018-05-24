@@ -1,4 +1,3 @@
-// import Template from './modal.html';
 import './modal/modal.css';
 import New from './modal/modal.html';
 
@@ -17,9 +16,6 @@ class DontModal {
   }
 }
 
-
-
-
-new DontModal()
+new DontModal();
 
 export default DontModal;
