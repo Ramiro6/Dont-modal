@@ -1,9 +1,10 @@
+import Core from '../src/core/core';
 import './modal/modal.css';
-import New from './modal/modal.html';
+import NewModal from './modal/modal.html';
 
-class DontModal {
-
+class DontModal extends Core {
   constructor() {
+    super();
     console.log('Init constructor');
     document.addEventListener('DOMContentLoaded', () => {
       this.createModal();
@@ -14,28 +15,9 @@ class DontModal {
   createModal() {
     const modal = document.createElement('div');
     modal.id = 'dont-box-modal';
-    modal.innerHTML = New;
+    modal.innerHTML = NewModal;
     document.body.appendChild(modal);
-    this.closeModalHeader();
-    this.closeModalCancel();
-  }
-
-  closeModalHeader() {
-    const takeCancelElement = document.getElementById('dont-modal-cancel-header');
-    takeCancelElement.style.cursor = 'pointer';
-    takeCancelElement.addEventListener('click', () => {
-      const takeAllModal = document.getElementById('dont-box-modal');
-      takeAllModal.remove();
-    }, false);
-  }
-
-  closeModalCancel() {
-    const takeCancelElement = document.getElementById('dont-modal-cancel');
-    takeCancelElement.style.cursor = 'pointer';
-    takeCancelElement.addEventListener('click', () => {
-      const takeAllModal = document.getElementById('dont-box-modal');
-      takeAllModal.remove();
-    }, false);
+    this.closeModal(modal);
   }
 }
 

@@ -1,3 +1,5 @@
+@import '../../style/module/btn.css';
+
 .dont-modal {
   /* display: none; */
   position: fixed;
@@ -65,4 +67,11 @@
   justify-content: flex-end;
   padding: 1rem;
   border-top: 1px solid #e9ecef;
+}
+
+.dont-btn-danger {
+  @apply --btn;
+  color: #fff;
+  background-color: #c82333;
+  border-color: #bd2130;
 }
