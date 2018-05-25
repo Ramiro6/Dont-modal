@@ -1,23 +1,28 @@
-import './modal/modal.css';
-import New from './modal/modal.html';
+// import Core from '../src/core/core';
+import simpleConfirmation from './components/simple-confirmation/simpleConfirmation';
+// import './modal/modal.css';
+// import NewModal from './modal/modal.html';
 
-class DontModal {
-  constructor() {
-    console.log('Init constructor')
-    // document.addEventListener('DOMContentLoaded', () => {
-    //   this.createModal();
-    // }, false);
-    this.createModal();
-  }
+// class DontModal extends Core {
+//   constructor() {
+//     super();
+//     console.log('Init constructor');
+//     // document.addEventListener('DOMContentLoaded', () => {
+//     //   this.createModal();
+//     // }, false);
+//     this.createModal();
+//   }
 
-  createModal() {
-    console.log('modal on!');
-    const modal = document.createElement('div');
-    modal.innerHTML = New;
-    document.body.appendChild(modal);
-  }
-}
+//   createModal() {
+//     const modal = document.createElement('div');
+//     modal.id = 'dont-box-modal';
+//     modal.innerHTML = NewModal;
+//     document.body.appendChild(modal);
+//     this.closeModal(modal);
+//   }
+// }
 
 // new DontModal();
+// new simpleConfirmation();
 
-export default DontModal;
+export default simpleConfirmation;
