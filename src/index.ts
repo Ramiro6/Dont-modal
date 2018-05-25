@@ -23,6 +23,6 @@ import simpleConfirmation from './components/simple-confirmation/simpleConfirmat
 // }
 
 // new DontModal();
-// new simpleConfirmation();
+new simpleConfirmation('dsajdlsjaldjladskj');
 
 export default simpleConfirmation;

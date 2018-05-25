@@ -5,15 +5,16 @@ import NewModal from './SimpleConfirmation.html';
 class SimpleConfirmation extends Core {
   constructor(termino: string) {
     super();
-    // document.addEventListener('DOMContentLoaded', () => {
-    //   this.createModal(termino);
-    // }, false);
-    this.createModal(termino);
+    document.addEventListener('DOMContentLoaded', () => {
+      this.createModal(termino);
+    }, false);
+    // this.createModal(termino);
   }
 
   createModal(termino: string) {
+    console.log(this.boxName);
     const modal = document.createElement('div');
-    modal.id = 'dont-box-modal';
+    modal.id = this.boxName;
     modal.innerHTML = NewModal;
     document.body.appendChild(modal);
     this.closeModal(modal);
