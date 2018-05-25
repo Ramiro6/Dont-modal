@@ -1,0 +1,74 @@
+@import '../../../style/modularity/module.css';
+
+.dont-modal {
+  /* display: none; */
+  @apply --basicModal;
+}
+
+.dont-modal-dialog {
+  max-width: 500px;
+  margin: 1.75rem auto;
+}
+
+.dont-modal-content {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0,0,0,.2);
+  border-radius: .3rem;
+  outline: 0;
+}
+
+.dont-modal-body {
+  position: relative;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 1rem;
+}
+
+
+.dont-close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.dont-modal-footer {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  padding: 1rem;
+  border-top: 1px solid #e9ecef;
+}
+
+.dont-btn-success {
+  @apply --btn;
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+/* .dont-img-simple {
+  height: 100%;
+  border: solid 1px black;
+  display: flex;
+  justify-content: center;
+}
+
+.responsive-img {
+  margin: 10px;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border: solid 1px black;
+} */

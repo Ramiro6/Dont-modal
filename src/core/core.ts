@@ -8,6 +8,14 @@ class Core {
       }, false);
     }
   }
+
+  createContent(termino: string) {
+    let takeElement = document.getElementsByClassName('dont-modal-body')[0];
+    const createNewContent = document.createElement('p');
+    createNewContent.textContent = termino;
+    createNewContent.classList.add('dont-simple-body');
+    takeElement.appendChild(createNewContent);
+  }
 }
 
 export default Core;
