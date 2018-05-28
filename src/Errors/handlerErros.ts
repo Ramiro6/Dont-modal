@@ -2,4 +2,8 @@ const noContent = () => {
   throw 'The Modal body content it is required';
 };
 
-export default { noContent };
+const noTitle = () => {
+  throw 'You need put Title options';
+};
+
+export default { noContent, noTitle };

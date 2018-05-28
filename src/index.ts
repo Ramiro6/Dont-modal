@@ -22,7 +22,15 @@ import simpleConfirmation from './components/simple-confirmation/simpleConfirmat
 //   }
 // }
 
-// new DontModal();
-new simpleConfirmation('dsajdlsjaldjladskj');
+const j = {
+  title: 'ldalsdjdasdasdkladklasljl',
+  btn: 'ok',
+};
+
+let x = new simpleConfirmation(j);
+
+setTimeout(() => {
+  x.deleteDynamic();
+}, 3000);
 
 export default simpleConfirmation;

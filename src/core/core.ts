@@ -13,6 +13,10 @@ class Core {
     }
   }
 
+  createBtn(termino: string) {
+    console.log(termino);
+  }
+
   createContent(termino: string) {
     const create = () => {
       let takeElement = document.getElementsByClassName('dont-modal-body')[0];
@@ -27,7 +31,7 @@ class Core {
 
   public deleteDynamic(): void {
     const deleteElement = document.getElementById(`${this.boxName}`);
-    deleteElement.remove();
+    if (deleteElement) { deleteElement.remove(); }
   }
 }
 
