@@ -13,8 +13,13 @@ class Core {
     }
   }
 
-  createBtn(termino: string) {
-    console.log(termino);
+  createBtn(terminoBtn: string) {
+    let takeClassBtn = document.getElementsByClassName('dont-modal-footer')[0];
+    const createNewBtn = document.createElement('button');
+    createNewBtn.classList.add('dont-btn-success');
+    createNewBtn.id = 'dont-modal-cancel';
+    createNewBtn.textContent = terminoBtn;
+    takeClassBtn.appendChild(createNewBtn);
   }
 
   createContent(termino: string) {

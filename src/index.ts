@@ -23,14 +23,16 @@ import simpleConfirmation from './components/simple-confirmation/simpleConfirmat
 // }
 
 const j = {
-  title: 'ldalsdjdasdasdkladklasljl',
-  btn: 'ok',
+  btn: 'send',
+  img: 'app/img/png',
+  title: 'lorem',
+  svg: 'app/img/svg',
 };
 
 let x = new simpleConfirmation(j);
 
-setTimeout(() => {
-  x.deleteDynamic();
-}, 3000);
+// setTimeout(() => {
+//   x.deleteDynamic();
+// }, 3000);
 
 export default simpleConfirmation;

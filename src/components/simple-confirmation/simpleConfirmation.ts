@@ -6,19 +6,37 @@ import NewModal from './SimpleConfirmation.html';
 class SimpleConfirmation extends Core {
   constructor(termino: object) {
     super();
-    // document.addEventListener('DOMContentLoaded', () => {
-    //   this.createModal(termino);
-    // }, false);
-    this.validateSimpleModal(termino);
+    document.addEventListener('DOMContentLoaded', () => {
+      // this.createModal(termino);
+      this.validateSimpleModal(termino);
+    }, false);
+    // this.validateSimpleModal(termino);
   }
 
   validateSimpleModal(termino: any) {
     if (termino.title) {
+      this.createModal();
       for (const key in termino) {
         if (termino.hasOwnProperty(key)) {
           // const element = termino[key];
           // console.log(element);
-          console.log(key);
+          switch (key) {
+            case 'title':
+              console.log('hay un title');
+              console.log(termino[key]);
+              this.createContent(termino[key]);
+              break;
+            case 'btn':
+              console.log('hay un btn');
+              this.createBtn(termino[key]);
+              break;
+            case 'img':
+              console.log('hay un img');
+              break;
+            case 'svg':
+              console.log('hay un svg');
+              break;
+          }
         }
       }
 
@@ -30,15 +48,15 @@ class SimpleConfirmation extends Core {
     //   this.createModal(termino);
     // }
   }
-
-  createModal(termino: string) {
+  // termino: string
+  createModal() {
     console.log(this.boxName);
     const modal = document.createElement('div');
     modal.id = this.boxName;
     modal.innerHTML = NewModal;
     document.body.appendChild(modal);
     this.closeModal(modal);
-    this.createContent(termino);
+    // this.createContent(termino);
   }
 }
 
