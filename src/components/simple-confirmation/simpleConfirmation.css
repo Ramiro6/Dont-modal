@@ -58,6 +58,11 @@
   border-color: #28a745;
 }
 
+.dont-img-modal {
+  height: auto;
+  width: 100%;
+}
+
 /* .dont-img-simple {
   height: 100%;
   border: solid 1px black;

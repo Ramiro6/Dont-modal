@@ -48,6 +48,21 @@ module.exports = {
           { loader: 'css-loader', options: { importLoaders: 1 } },
           'postcss-loader'
         ]
+      },
+      {
+        test: /\.(jpg|png)$/,
+        use: [
+         { loader: 'url-loader', options: { limit: 250000 } }
+        ]
+      },
+      {
+        test: /\.(jpg|png)$/,
+        use: {
+          loader: "file-loader",
+          options: {
+            name: "[path][name].[hash].[ext]",
+          },
+        },
       }
     ]
   }

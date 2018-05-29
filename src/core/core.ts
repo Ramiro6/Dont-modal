@@ -21,6 +21,15 @@ class Core {
     }
   }
 
+  createImg(imgTerm: any) {
+    console.log(imgTerm);
+    const takePather = document.getElementsByClassName('dont-modal-body')[0];
+    const createNewImage = document.createElement('img');
+    createNewImage.src = imgTerm;
+    createNewImage.classList.add('dont-img-modal');
+    takePather.appendChild(createNewImage);
+  }
+
   createBtn(terminoBtn: string) {
     let takeClassBtn = document.getElementsByClassName('dont-modal-footer')[0];
     const createNewBtn = document.createElement('button');

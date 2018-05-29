@@ -29,6 +29,8 @@ class SimpleConfirmation extends Core {
               Errors.oneElement();
               break;
             case 'img':
+              // this.createImg(termino[key]);
+              this.createImg(termino[key]);
               console.log('hay un img');
               break;
             case 'svg':
