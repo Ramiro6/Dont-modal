@@ -3,13 +3,21 @@ import Errors from '../Errors/handlerErros';
 class Core {
   public readonly boxName = 'dont-box-modal';
 
-  closeModal(modalBase: any) {
-    const takeCancelElement: any = document.querySelectorAll('#dont-modal-cancel');
-    for (let obj of takeCancelElement) {
-      obj.style.cursor = 'pointer';
-      obj.addEventListener('click', () => {
-        modalBase.remove();
-      }, false);
+  public async closeModal(modalBase: any) {
+    try {
+      let waitParams = await modalBase;
+      if (waitParams) {
+        const takeCancelElement: any = document.querySelectorAll('#dont-modal-cancel');
+        for (let obj of takeCancelElement) {
+          obj.style.cursor = 'pointer';
+          obj.addEventListener('click', () => {
+            modalBase.remove();
+          }, false);
+        }
+      }
+    } catch (e) {
+      console.error(e);
+      Errors.errorIntern();
     }
   }
 

@@ -1,4 +1,5 @@
 // import Core from '../src/core/core';
+import Img from '../../../applab-intro.png';
 import simpleConfirmation from './components/simple-confirmation/simpleConfirmation';
 // import './modal/modal.css';
 // import NewModal from './modal/modal.html';
@@ -24,12 +25,11 @@ import simpleConfirmation from './components/simple-confirmation/simpleConfirmat
 
 const j = {
   btn: 'send',
-  img: 'app/img/png',
+  img: Img,
   title: 'lorem',
-  svg: 'app/img/svg',
 };
 
-let x = new simpleConfirmation(j);
+new simpleConfirmation(j);
 
 // setTimeout(() => {
 //   x.deleteDynamic();
