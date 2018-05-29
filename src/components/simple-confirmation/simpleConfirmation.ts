@@ -7,38 +7,50 @@ class SimpleConfirmation extends Core {
   constructor(termino: object) {
     super();
     // document.addEventListener('DOMContentLoaded', () => {
-    //   this.createModal(termino);
+    //   // this.createModal(termino);
+    //   this.validateSimpleModal(termino);
     // }, false);
     this.validateSimpleModal(termino);
   }
 
   validateSimpleModal(termino: any) {
-    if (termino.title) {
+    const passData = () => {
+      this.createModal();
       for (const key in termino) {
         if (termino.hasOwnProperty(key)) {
-          // const element = termino[key];
-          // console.log(element);
-          console.log(key);
+          switch (key) {
+            case 'title':
+              this.createContent(termino[key]);
+              break;
+            case 'btn':
+              this.createBtn(termino[key]);
+              break;
+            case 'svg' || 'img':
+              Errors.oneElement();
+              break;
+            case 'img':
+              // this.createImg(termino[key]);
+              this.createImg(termino[key]);
+              console.log('hay un img');
+              break;
+            case 'svg':
+              console.log('hay un svg');
+              break;
+          }
         }
       }
+    };
 
-      console.log('Validado');
-    } else {
-      Errors.noTitle();
-    }
-    // if (condition) {
-    //   this.createModal(termino);
-    // }
+    termino.title ? passData() : Errors.noTitle();
   }
-
-  createModal(termino: string) {
-    console.log(this.boxName);
+  // termino: string
+  createModal() {
     const modal = document.createElement('div');
     modal.id = this.boxName;
     modal.innerHTML = NewModal;
     document.body.appendChild(modal);
     this.closeModal(modal);
-    this.createContent(termino);
+    // this.createContent(termino);
   }
 }
 

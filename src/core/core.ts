@@ -3,18 +3,40 @@ import Errors from '../Errors/handlerErros';
 class Core {
   public readonly boxName = 'dont-box-modal';
 
-  closeModal(modalBase: any) {
-    const takeCancelElement: any = document.querySelectorAll('#dont-modal-cancel');
-    for (let obj of takeCancelElement) {
-      obj.style.cursor = 'pointer';
-      obj.addEventListener('click', () => {
-        modalBase.remove();
-      }, false);
+  public async closeModal(modalBase: any) {
+    try {
+      let waitParams = await modalBase;
+      if (waitParams) {
+        const takeCancelElement: any = document.querySelectorAll('#dont-modal-cancel');
+        for (let obj of takeCancelElement) {
+          obj.style.cursor = 'pointer';
+          obj.addEventListener('click', () => {
+            modalBase.remove();
+          }, false);
+        }
+      }
+    } catch (e) {
+      console.error(e);
+      Errors.errorIntern();
     }
   }
 
-  createBtn(termino: string) {
-    console.log(termino);
+  createImg(imgTerm: any) {
+    console.log(imgTerm);
+    const takePather = document.getElementsByClassName('dont-modal-body')[0];
+    const createNewImage = document.createElement('img');
+    createNewImage.src = imgTerm;
+    createNewImage.classList.add('dont-img-modal');
+    takePather.appendChild(createNewImage);
+  }
+
+  createBtn(terminoBtn: string) {
+    let takeClassBtn = document.getElementsByClassName('dont-modal-footer')[0];
+    const createNewBtn = document.createElement('button');
+    createNewBtn.classList.add('dont-btn-success');
+    createNewBtn.id = 'dont-modal-cancel';
+    createNewBtn.textContent = terminoBtn;
+    takeClassBtn.appendChild(createNewBtn);
   }
 
   createContent(termino: string) {

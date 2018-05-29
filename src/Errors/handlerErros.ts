@@ -6,4 +6,15 @@ const noTitle = () => {
   throw 'You need put Title options';
 };
 
-export default { noContent, noTitle };
+const oneElement = () => {
+  throw 'Only one element';
+};
+
+const errorIntern = () => {
+  throw 'Ipss Upsss error internal';
+};
+
+export default { noContent,
+                 noTitle,
+                 oneElement,
+                 errorIntern };
