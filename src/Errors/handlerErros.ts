@@ -14,7 +14,12 @@ const errorIntern = () => {
   throw 'Ipss Upsss error internal';
 };
 
+const needAdd = () => {
+  throw 'you have not placed the data correctly';
+};
+
 export default { noContent,
                  noTitle,
                  oneElement,
-                 errorIntern };
+                 errorIntern,
+                 needAdd };

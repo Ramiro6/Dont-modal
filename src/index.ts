@@ -1,13 +1,15 @@
 // import Img from '../static/applab-intro.png';
 import simpleConfirmation from './components/simple-confirmation/simpleConfirmation';
 
-// const j = {
-//   btn: 'send',
-//   title: 'lorem',
-//   img: Img,
-// };
+const j = {
+  classList: [{
+    btnCancel: 'btn',
+  }],
+  btn: 'send',
+  title: 'lorem',
+};
 
-// new simpleConfirmation(j);
+new simpleConfirmation(j);
 
 // setTimeout(() => {
 //   x.deleteDynamic();

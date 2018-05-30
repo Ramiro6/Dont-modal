@@ -1,4 +1,5 @@
 import Errors from '../Errors/handlerErros';
+import IclassList from '../interfaces/classList';
 
 class Core {
   public readonly boxName = 'dont-box-modal';
@@ -30,10 +31,11 @@ class Core {
     takePather.appendChild(createNewImage);
   }
 
-  createBtn(terminoBtn: string) {
+  createBtnCancel(terminoBtn: string) {
     let takeClassBtn = document.getElementsByClassName('dont-modal-footer')[0];
     const createNewBtn = document.createElement('button');
-    createNewBtn.classList.add('dont-btn-success');
+    createNewBtn.classList.add('dont-btn-cancel');
+    createNewBtn.classList.add('dont-btn');
     createNewBtn.id = 'dont-modal-cancel';
     createNewBtn.textContent = terminoBtn;
     takeClassBtn.appendChild(createNewBtn);
@@ -49,6 +51,28 @@ class Core {
     };
 
     termino ? create() : Errors.noContent();
+  }
+
+  addClassToClassList(classList: IclassList[]) {
+    const replaceBtnCancel = (newItem: string) => {
+      // control error
+      const takeBtnCancel = document.getElementsByClassName('dont-btn')[0];
+      let array: any = newItem.split(' ');
+      takeBtnCancel.classList.remove('dont-btn-cancel');
+      takeBtnCancel.classList.add(... array);
+    };
+
+    const elements: any = new Object(... classList);
+    for (const key in elements) {
+      if (elements.hasOwnProperty(key)) {
+        // const signature = elements[key];
+        if (key === 'btnSuccess') {
+          console.log('si tiene');
+        } else if (key === 'btnCancel') {
+          elements[key].replace(/\s/g, '') === '' ? Errors.needAdd() : replaceBtnCancel(elements[key]);
+        }
+      }
+    }
   }
 
   public deleteDynamic(): void {

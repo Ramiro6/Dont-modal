@@ -6,14 +6,15 @@ import NewModal from './SimpleConfirmation.html';
 class SimpleConfirmation extends Core {
   constructor(termino: object) {
     super();
-    // document.addEventListener('DOMContentLoaded', () => {
-    //   // this.createModal(termino);
-    //   this.validateSimpleModal(termino);
-    // }, false);
-    this.validateSimpleModal(termino);
+    document.addEventListener('DOMContentLoaded', () => {
+      // this.createModal(termino);
+      this.validateSimpleModal(termino);
+    }, false);
+    // this.validateSimpleModal(termino);
   }
 
   validateSimpleModal(termino: any) {
+    // if (termino.classList) { this.addClassToClassList(termino.classList); }
     const passData = () => {
       this.createModal();
       for (const key in termino) {
@@ -23,7 +24,7 @@ class SimpleConfirmation extends Core {
               this.createContent(termino[key]);
               break;
             case 'btn':
-              this.createBtn(termino[key]);
+              this.createBtnCancel(termino[key]);
               break;
             case 'svg' || 'img':
               Errors.oneElement();
@@ -41,7 +42,11 @@ class SimpleConfirmation extends Core {
       }
     };
 
-    termino.title ? passData() : Errors.noTitle();
+    if (termino.title) {
+      passData(); this.addClassToClassList(termino.classList);
+    } else {
+      Errors.noTitle();
+    }
   }
   // termino: string
   createModal() {
