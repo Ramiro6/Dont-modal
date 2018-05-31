@@ -1,20 +1,20 @@
 import Core from '../../core/core';
 import Errors from '../../Errors/handlerErros';
-import './SimpleConfirmation.css';
-import NewModal from './SimpleConfirmation.html';
+import NewModal from './methodModal.html';
 
-class SimpleConfirmation extends Core {
+class MethodModal extends Core {
   constructor(termino: object) {
     super();
-    // document.addEventListener('DOMContentLoaded', () => {
-    //   // this.createModal(termino);
-    //   this.validateSimpleModal(termino);
-    // }, false);
-    this.validateSimpleModal(termino);
+    document.addEventListener('DOMContentLoaded', () => {
+      this.validateModal(termino);
+    }, false);
+    // this.createModal();
   }
 
-  validateSimpleModal(termino: any) {
-    // if (termino.classList) { this.addClassToClassList(termino.classList); }
+  validateModal(termino: any) {
+    console.log(termino);
+    // this.createModal();
+
     const passData = () => {
       this.createModal();
       for (const key in termino) {
@@ -43,12 +43,14 @@ class SimpleConfirmation extends Core {
     };
 
     if (termino.title) {
-      passData(); this.addClassToClassList(termino.classList);
+      passData();
+      this.addClassToClassList(termino.classList);
+      this.validateMethods(termino);
     } else {
       Errors.noTitle();
     }
   }
-  // termino: string
+
   createModal() {
     const modal = document.createElement('div');
     modal.id = this.boxName;
@@ -57,6 +59,7 @@ class SimpleConfirmation extends Core {
     this.closeModal(modal);
     // this.createContent(termino);
   }
+
 }
 
-export default SimpleConfirmation;
+export default MethodModal;

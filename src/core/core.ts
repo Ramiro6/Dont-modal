@@ -1,7 +1,9 @@
 import Errors from '../Errors/handlerErros';
 import IclassList from '../interfaces/classList';
+import ImethodList from '../interfaces/methodList';
+import Method from './methods';
 
-class Core {
+class Core extends Method {
   public readonly boxName = 'dont-box-modal';
 
   public async closeModal(modalBase: any) {
@@ -79,6 +81,18 @@ class Core {
     const deleteElement = document.getElementById(`${this.boxName}`);
     if (deleteElement) { deleteElement.remove(); }
   }
+
+  validateMethods(allMethods: any) {
+    const validator = () => {
+      console.log('validador');
+      console.log(allMethods);
+    };
+
+    const acceptContent: ImethodList = allMethods.method;
+    acceptContent ? validator() : console.log('na');
+  }
 }
+
+// saludo('dasdaskjdhkas');
 
 export default Core;
