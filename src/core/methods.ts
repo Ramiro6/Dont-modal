@@ -15,10 +15,9 @@ class Method {
 
   methodGet(takeElement: ImethodList) {
     console.log(takeElement);
-    console.log('Method on!');
   }
 
-  methodDelete(takeElement: ImethodList) {
+  private methodDelete(takeElement: ImethodList): void {
     const headersType = new Headers({'X-Requested-With': 'XMLHttpRequest', 'X-CSRF-Token': takeElement.token});
     const url = takeElement.url;
 

@@ -6,7 +6,7 @@ import simpleConfirmation from './components/simple-confirmation/simpleConfirmat
 //   classList: [{
 //     // btnCancel: 'btn',
 //   }],
-//   btn: 'send',
+//   btnCancel: 'send',
 //   title: 'lorem',
 // };
 
@@ -16,16 +16,16 @@ import simpleConfirmation from './components/simple-confirmation/simpleConfirmat
 //   x.deleteDynamic();
 // }, 3000);
 
-new MethodModal({
-  method: {
-    type: 'get',
-    url: 'localhost:3000',
-    token: 'mdjljasdjbasj',
-  },
-  classList: [{}],
-  btnSuccess: 'send',
-  btnCancel: 'cancel',
-  title: 'lorem',
-});
+// new MethodModal({
+//   method: {
+//     type: 'get',
+//     url: 'localhost:3000',
+//     token: 'mdjljasdjbasj',
+//   },
+//   classList: [{}],
+//   btnSuccess: 'send',
+//   btnCancel: 'cancel',
+//   title: 'lorem',
+// });
 
 export { simpleConfirmation, MethodModal };

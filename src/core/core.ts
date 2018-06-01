@@ -10,13 +10,34 @@ class Core extends Method {
     try {
       let waitParams = await modalBase;
       if (waitParams) {
-        const takeCancelElement: any = document.querySelectorAll('#dont-modal-cancel');
-        for (let obj of takeCancelElement) {
+        const takeCancelElement: any = document.querySelectorAll('#dont-modal-cancel, #dont-modal-success');
+
+        return new Promise((resolve: any) => {
+          for (let obj of takeCancelElement) {
+          console.log(obj);
           obj.style.cursor = 'pointer';
-          obj.addEventListener('click', () => {
-            modalBase.remove();
+          obj.addEventListener('click', (e: any) => {
+            if (e.target.id === 'dont-modal-success') {
+              modalBase.remove();
+              resolve(true);
+            } else if (e.target.id === 'dont-modal-cancel') {
+              resolve(false);
+              modalBase.remove();
+            }
           }, false);
         }
+        });
+        // for (let obj of takeCancelElement) {
+        //   console.log(obj);
+        //   obj.style.cursor = 'pointer';
+        //   obj.addEventListener('click', (e: any) => {
+        //     if (e.target.id === 'dont-modal-success') {
+        //       modalBase.remove();
+        //     } else if (e.target.id === 'dont-modal-cancel') {
+        //       modalBase.remove();
+        //     }
+        //   }, false);
+        // }
       }
     } catch (e) {
       console.error(e);
@@ -25,7 +46,6 @@ class Core extends Method {
   }
 
   createImg(imgTerm: any) {
-    console.log(imgTerm);
     const takePather = document.getElementsByClassName('dont-modal-body')[0];
     const createNewImage = document.createElement('img');
     createNewImage.src = imgTerm;
@@ -44,12 +64,11 @@ class Core extends Method {
   }
 
   createBtn(terminoBtn: string) {
-    console.log(terminoBtn);
     let takeClassBtn = document.getElementsByClassName('dont-modal-footer')[0];
     const createNewBtn = document.createElement('button');
     createNewBtn.classList.add('dont-btn-success');
     createNewBtn.classList.add('dont-btn');
-    createNewBtn.id = 'dont-modal-cancel';
+    createNewBtn.id = 'dont-modal-success';
     createNewBtn.style.marginRight = '.25rem';
     createNewBtn.textContent = terminoBtn;
     takeClassBtn.appendChild(createNewBtn);
