@@ -6,11 +6,11 @@ import NewModal from './SimpleConfirmation.html';
 class SimpleConfirmation extends Core {
   constructor(termino: object) {
     super();
-    // document.addEventListener('DOMContentLoaded', () => {
-    //   // this.createModal(termino);
-    //   this.validateSimpleModal(termino);
-    // }, false);
-    this.validateSimpleModal(termino);
+    document.addEventListener('DOMContentLoaded', () => {
+      // this.createModal(termino);
+      this.validateSimpleModal(termino);
+    }, false);
+    // this.validateSimpleModal(termino);
   }
 
   validateSimpleModal(termino: any) {

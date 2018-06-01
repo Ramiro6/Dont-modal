@@ -18,16 +18,23 @@ class Method {
   }
 
   private methodDelete(takeElement: ImethodList): void {
-    const headersType = new Headers({'X-Requested-With': 'XMLHttpRequest', 'X-CSRF-Token': takeElement.token});
+    const headers = new Headers({'X-Requested-With': 'XMLHttpRequest', 'X-CSRF-Token': takeElement.token});
     const url = takeElement.url;
 
     fetch(url, {
       method: 'DELETE',
-      headers: headersType,
+      headers,
       credentials: 'same-origin',
     }).then((data) => {
       console.log(data);
+      this.allResponse(data);
     });
+  }
+
+  allResponse(dataResponse: any) {
+    console.log('hola desde data response');
+    console.log(dataResponse);
+    return 'asdjasdhkjdashjkads';
   }
 
 }

@@ -7,7 +7,7 @@ const noTitle = () => {
 };
 
 const oneElement = () => {
-  throw 'Only one element';
+  throw new Error('Only one element');
 };
 
 const errorIntern = () => {

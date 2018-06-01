@@ -11,37 +11,39 @@ class Core extends Method {
       let waitParams = await modalBase;
       if (waitParams) {
         const takeCancelElement: any = document.querySelectorAll('#dont-modal-cancel, #dont-modal-success');
-
-        return new Promise((resolve: any) => {
+        return new Promise((resolve: any, reject: any) => {
           for (let obj of takeCancelElement) {
-          console.log(obj);
           obj.style.cursor = 'pointer';
           obj.addEventListener('click', (e: any) => {
             if (e.target.id === 'dont-modal-success') {
-              modalBase.remove();
               resolve(true);
+              this.controlRemove(modalBase);
             } else if (e.target.id === 'dont-modal-cancel') {
               resolve(false);
               modalBase.remove();
+            } else {
+              reject();
+              Errors.errorIntern();
             }
           }, false);
         }
         });
-        // for (let obj of takeCancelElement) {
-        //   console.log(obj);
-        //   obj.style.cursor = 'pointer';
-        //   obj.addEventListener('click', (e: any) => {
-        //     if (e.target.id === 'dont-modal-success') {
-        //       modalBase.remove();
-        //     } else if (e.target.id === 'dont-modal-cancel') {
-        //       modalBase.remove();
-        //     }
-        //   }, false);
-        // }
       }
     } catch (e) {
       console.error(e);
       Errors.errorIntern();
+    }
+  }
+
+  async controlRemove(modalBase: any) {
+    modalBase.remove();
+    console.log(Method);
+    try {
+      let x = await this.allResponse(null);
+      console.log('desde el control remove');
+      console.log(x);
+    } catch (e) {
+      console.error(e);
     }
   }
 
@@ -98,9 +100,7 @@ class Core extends Method {
     const elements: any = new Object(... classList);
     for (const key in elements) {
       if (elements.hasOwnProperty(key)) {
-        // const signature = elements[key];
         if (key === 'btnSuccess') {
-          console.log('si tiene');
         } else if (key === 'btnCancel') {
           elements[key].replace(/\s/g, '') === '' ? Errors.needAdd() : replaceBtnCancel(elements[key]);
         }
