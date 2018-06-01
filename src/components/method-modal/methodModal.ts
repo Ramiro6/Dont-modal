@@ -1,14 +1,15 @@
 import Core from '../../core/core';
 import Errors from '../../Errors/handlerErros';
+import './methodModal.css';
 import NewModal from './methodModal.html';
 
 class MethodModal extends Core {
   constructor(termino: object) {
     super();
-    // document.addEventListener('DOMContentLoaded', () => {
-    //   this.validateModal(termino);
-    // }, false);
-    this.validateModal(termino);
+    document.addEventListener('DOMContentLoaded', () => {
+      this.validateModal(termino);
+    }, false);
+    // this.validateModal(termino);
   }
 
   validateModal(termino: any) {
@@ -23,8 +24,11 @@ class MethodModal extends Core {
             case 'title':
               this.createContent(termino[key]);
               break;
-            case 'btn':
+            case 'btnCancel':
               this.createBtnCancel(termino[key]);
+              break;
+            case 'btnSuccess':
+              this.createBtn(termino[key]);
               break;
             case 'svg' || 'img':
               Errors.oneElement();

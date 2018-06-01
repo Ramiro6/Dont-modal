@@ -19,8 +19,6 @@ class Method {
   }
 
   methodDelete(takeElement: ImethodList) {
-    console.log(takeElement);
-    console.log('Method delete!');
     const headersType = new Headers({'X-Requested-With': 'XMLHttpRequest', 'X-CSRF-Token': takeElement.token});
     const url = takeElement.url;
 

@@ -43,6 +43,18 @@ class Core extends Method {
     takeClassBtn.appendChild(createNewBtn);
   }
 
+  createBtn(terminoBtn: string) {
+    console.log(terminoBtn);
+    let takeClassBtn = document.getElementsByClassName('dont-modal-footer')[0];
+    const createNewBtn = document.createElement('button');
+    createNewBtn.classList.add('dont-btn-success');
+    createNewBtn.classList.add('dont-btn');
+    createNewBtn.id = 'dont-modal-cancel';
+    createNewBtn.style.marginRight = '.25rem';
+    createNewBtn.textContent = terminoBtn;
+    takeClassBtn.appendChild(createNewBtn);
+  }
+
   createContent(termino: string) {
     const create = () => {
       let takeElement = document.getElementsByClassName('dont-modal-body')[0];

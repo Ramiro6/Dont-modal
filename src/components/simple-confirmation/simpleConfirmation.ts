@@ -23,7 +23,7 @@ class SimpleConfirmation extends Core {
             case 'title':
               this.createContent(termino[key]);
               break;
-            case 'btn':
+            case 'btnCancel':
               this.createBtnCancel(termino[key]);
               break;
             case 'svg' || 'img':
