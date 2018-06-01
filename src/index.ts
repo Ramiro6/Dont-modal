@@ -16,13 +16,15 @@ import simpleConfirmation from './components/simple-confirmation/simpleConfirmat
 //   x.deleteDynamic();
 // }, 3000);
 
-new MethodModal({
-  method: {
-    type: 'GET',
-  },
-  classList: [{}],
-  btn: 'send',
-  title: 'lorem',
-});
+// new MethodModal({
+//   method: {
+//     type: 'get',
+//     url: 'localhost:3000',
+//     token: 'mdjljasdjbasj',
+//   },
+//   classList: [{}],
+//   btn: 'send',
+//   title: 'lorem',
+// });
 
 export { simpleConfirmation, MethodModal };

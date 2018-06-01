@@ -82,17 +82,23 @@ class Core extends Method {
     if (deleteElement) { deleteElement.remove(); }
   }
 
+  typeMethods() {
+    return ['GET', 'POST', 'PUT', 'PATH', 'DELETE'];
+  }
+
   validateMethods(allMethods: any) {
     const validator = () => {
-      console.log('validador');
-      console.log(allMethods);
+      const takeMethod = allMethods.method.type.toUpperCase();
+      this.typeMethods().map((res: string) => {
+        if (takeMethod === res) {
+          this.switchMethod(allMethods.method);
+        }
+      });
     };
 
-    const acceptContent: ImethodList = allMethods.method;
+    const acceptContent: ImethodList = allMethods.method as ImethodList;
     acceptContent ? validator() : console.log('na');
   }
 }
-
-// saludo('dasdaskjdhkas');
 
 export default Core;

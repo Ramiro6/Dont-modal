@@ -5,10 +5,10 @@ import NewModal from './methodModal.html';
 class MethodModal extends Core {
   constructor(termino: object) {
     super();
-    document.addEventListener('DOMContentLoaded', () => {
-      this.validateModal(termino);
-    }, false);
-    // this.createModal();
+    // document.addEventListener('DOMContentLoaded', () => {
+    //   this.validateModal(termino);
+    // }, false);
+    this.validateModal(termino);
   }
 
   validateModal(termino: any) {
